@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Gemini API proxy
+
+This project includes a small server endpoint at `/api/gemini` that proxies requests to Google's Generative Language (Gemini) API. Do not commit your API key.
+
+Create a `.env.local` in the project root containing:
+
+```
+GEMINI_API_KEY=your_api_key_here
+```
+
+Then run the dev server (`npm run dev`). The frontend will POST the user's prompt to `/api/gemini`, which uses `GEMINI_API_KEY` from the environment to call the API.
